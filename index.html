@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>MODAL</h1>
+    <div class="grid">
+    <!-- 카드 01 -->
+      <div class="card" onclick="openModal('img/01.jpg','영상공모전','2026 영상공모전 대상')">  <!-- 모달이미지, 제목, 설명 -->
+        <img class="card-thumb" src="img/01.jpg" alt="01">
+        <div class="card-info">
+            <h3>영상공모전</h3>
+            <span>2026 영상공모전 대상</span>
+        </div>
+      </div>
+    <!-- 카드 02 -->
+      <div class="card" onclick="openModal('img/02.jpg','영상공모전','2026 영상공모전 대상')">  <!-- 모달이미지, 제목, 설명 -->
+        <img class="card-thumb" src="img/02.jpg" alt="02">
+        <div class="card-info">
+            <h3>영상공모전</h3>
+            <span>2026 영상공모전 대상</span>
+        </div>
+      </div>
+    <!-- 카드 03 -->
+      <div class="card" onclick="openModal('img/03.jpg','영상공모전','2026 영상공모전 대상')">   <!-- 모달이미지, 제목, 설명 -->
+        <img class="card-thumb" src="img/03.jpg" alt="03">
+        <div class="card-info">
+            <h3>영상공모전</h3>
+            <span>2026 영상공모전 대상</span>
+       </div>
+     </div>
+    <!-- 카드 04 -->
+     <div class="card" onclick="openModal('img/01.jpg','영상공모전','2026 영상공모전 대상')">    <!-- 모달이미지, 제목, 설명 -->
+        <img class="card-thumb" src="img/01.jpg" alt="01">
+        <div class="card-info">
+            <h3>영상공모전</h3>
+            <span>2026 영상공모전 대상</span>
+        </div>
+      </div> 
+    </div>
+    
+    <!-- 모달 -->
+     <div class="modal-bg">
+        <div class="modal">
+          <button class="modal-close">X</button>
+          <img class="modal-thumb" id="modal-img" src="" alt="">
+          <!-- 모달에 표시할 이미지 js(자바스크립트)로 src를 동적으로 바꿔서 쓴다. -->
+           <div class="modal-body">
+             <h2 id="modal-title"></h2>
+             <p id="modal-desc"></p>
+           </div>
+        </div>
+     </div>
+
+     <script>
+        function openModal(imgSrc, title, desc) {
+          document.getElementById('modal-img').src = imgSrc;
+          document.getElementById('modal-img').alt = title;
+          document.getElementById('modal-title').textContent = title;
+          document.getElementById('modal-desc').textContent = desc;
+          document.getElementById('modal-bg').classList.add('open');
+           }
+        function closeModal(e) {
+          if (!e || e.target === document.getElementById('modal-bg')) {
+          document.getElementById('modal-bg').classList.remove('open');
+             }
+           }
+      </script>
+
+</body>
+</html>
